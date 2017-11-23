@@ -11,96 +11,182 @@ div#puzzle {
   grid-gap: 2px;
 }
 
-.piece {
+.tile {
   background: #000;
 }
 
-div#piece_1 {
-  background-image: url('./../img/image.jpg');
+.pos00 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.pos01 {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+.pos02 {
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+}
+
+.pos03 {
+  grid-row: 1 / 2;
+  grid-column: 4 / 5;
+}
+
+.pos10 {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.pos11 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.pos12 {
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+}
+
+.pos13 {
+  grid-row: 2 / 3;
+  grid-column: 4 / 5;
+}
+
+.pos20 {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+.pos21 {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.pos22 {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+}
+
+.pos23 {
+  grid-row: 3 / 4;
+  grid-column: 4 / 5;
+}
+
+.pos30 {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+}
+
+.pos31 {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+}
+
+.pos32 {
+  grid-row: 4 / 5;
+  grid-column: 3 / 4;
+}
+
+.pos33 {
+  grid-row: 4 / 5;
+  grid-column: 4 / 5;
+}
+
+div#tile_1 {
+  background-image: url('./../img/image2.jpg');
   background-position: 0px 0px;
   background-size: 646px 646px;
 }
 
-div#piece_2 {
-  background-image: url('./../img/image.jpg');
+div#tile_2 {
+  background-image: url('./../img/image2.jpg');
   background-position: 486px 0px;
   background-size: 646px 646px;
 }
 
-div#piece_3 {
-  background-image: url('./../img/image.jpg');
+div#tile_3 {
+  background-image: url('./../img/image2.jpg');
   background-position: 324px 0px;
   background-size: 646px 646px;
 }
 
-div#piece_4 {
-  background-image: url('./../img/image.jpg');
+div#tile_4 {
+  background-image: url('./../img/image2.jpg');
   background-position: 162px 0px;
   background-size: 646px 646px;
 }
 
-div#piece_5 {
-  background-image: url('./../img/image.jpg');
+div#tile_5 {
+  background-image: url('./../img/image2.jpg');
   background-position: 0px 486px;
   background-size: 646px 646px;
 }
 
-div#piece_6 {
-  background-image: url('./../img/image.jpg');
+div#tile_6 {
+  background-image: url('./../img/image2.jpg');
   background-position: 486px 486px;
   background-size: 646px 646px;
 }
 
-div#piece_7 {
-  background-image: url('./../img/image.jpg');
+div#tile_7 {
+  background-image: url('./../img/image2.jpg');
   background-position: 324px 486px;
   background-size: 646px 646px;
 }
 
-div#piece_8 {
-  background-image: url('./../img/image.jpg');
+div#tile_8 {
+  background-image: url('./../img/image2.jpg');
   background-position: 162px 486px;
   background-size: 646px 646px;
 }
 
-div#piece_9 {
-  background-image: url('./../img/image.jpg');
+div#tile_9 {
+  background-image: url('./../img/image2.jpg');
   background-position: 0px 324px;
   background-size: 646px 646px;
 }
 
-div#piece_10 {
-  background-image: url('./../img/image.jpg');
+div#tile_10 {
+  background-image: url('./../img/image2.jpg');
   background-position: 486px 324px;
   background-size: 646px 646px;
 }
 
-div#piece_11 {
-  background-image: url('./../img/image.jpg');
+div#tile_11 {
+  background-image: url('./../img/image2.jpg');
   background-position: 324px 324px;
   background-size: 646px 646px;
 }
 
-div#piece_12 {
-  background-image: url('./../img/image.jpg');
+div#tile_12 {
+  background-image: url('./../img/image2.jpg');
   background-position: 162px 324px;
   background-size: 646px 646px;
 }
 
-div#piece_13 {
-  background-image: url('./../img/image.jpg');
+div#tile_13 {
+  background-image: url('./../img/image2.jpg');
   background-position: 0px 162px;
   background-size: 646px 646px;
 }
 
-div#piece_14 {
-  background-image: url('./../img/image.jpg');
+div#tile_14 {
+  background-image: url('./../img/image2.jpg');
   background-position: 486px 162px;
   background-size: 646px 646px;
 }
 
-div#piece_15 {
-  background-image: url('./../img/image.jpg');
+div#tile_15 {
+  background-image: url('./../img/image2.jpg');
   background-position: 324px 162px;
   background-size: 646px 646px;
+}
+
+footer {
+  font-size: .7em;
+  margin-top: 1em;
+  font-style: italic;
 }
