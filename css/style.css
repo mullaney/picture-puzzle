@@ -1,0 +1,106 @@
+* {
+  background-color: #fff;
+  color: black;
+  font-family: sans-serif;
+}
+
+div#puzzle {
+  display: grid;
+  grid-template-columns: repeat(4, 160px);
+  grid-template-rows: repeat(4, 160px);
+  grid-gap: 2px;
+}
+
+.piece {
+  background: #000;
+}
+
+div#piece_1 {
+  background-image: url('./../img/image.jpg');
+  background-position: 0px 0px;
+  background-size: 646px 646px;
+}
+
+div#piece_2 {
+  background-image: url('./../img/image.jpg');
+  background-position: 486px 0px;
+  background-size: 646px 646px;
+}
+
+div#piece_3 {
+  background-image: url('./../img/image.jpg');
+  background-position: 324px 0px;
+  background-size: 646px 646px;
+}
+
+div#piece_4 {
+  background-image: url('./../img/image.jpg');
+  background-position: 162px 0px;
+  background-size: 646px 646px;
+}
+
+div#piece_5 {
+  background-image: url('./../img/image.jpg');
+  background-position: 0px 486px;
+  background-size: 646px 646px;
+}
+
+div#piece_6 {
+  background-image: url('./../img/image.jpg');
+  background-position: 486px 486px;
+  background-size: 646px 646px;
+}
+
+div#piece_7 {
+  background-image: url('./../img/image.jpg');
+  background-position: 324px 486px;
+  background-size: 646px 646px;
+}
+
+div#piece_8 {
+  background-image: url('./../img/image.jpg');
+  background-position: 162px 486px;
+  background-size: 646px 646px;
+}
+
+div#piece_9 {
+  background-image: url('./../img/image.jpg');
+  background-position: 0px 324px;
+  background-size: 646px 646px;
+}
+
+div#piece_10 {
+  background-image: url('./../img/image.jpg');
+  background-position: 486px 324px;
+  background-size: 646px 646px;
+}
+
+div#piece_11 {
+  background-image: url('./../img/image.jpg');
+  background-position: 324px 324px;
+  background-size: 646px 646px;
+}
+
+div#piece_12 {
+  background-image: url('./../img/image.jpg');
+  background-position: 162px 324px;
+  background-size: 646px 646px;
+}
+
+div#piece_13 {
+  background-image: url('./../img/image.jpg');
+  background-position: 0px 162px;
+  background-size: 646px 646px;
+}
+
+div#piece_14 {
+  background-image: url('./../img/image.jpg');
+  background-position: 486px 162px;
+  background-size: 646px 646px;
+}
+
+div#piece_15 {
+  background-image: url('./../img/image.jpg');
+  background-position: 324px 162px;
+  background-size: 646px 646px;
+}
