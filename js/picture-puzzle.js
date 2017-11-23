@@ -12,12 +12,15 @@ class Tile {
   }
 
   setPosition (x, y) {
-    x = x || this.x;
-    y = y || this.y;
+    console.log('THIS:', this.id, this.x, this.y);
+    if (x === undefined) { x = this.x }
+    if (y === undefined) { y = this.y }
+    console.log('ARGS:', x, y);
     var div = $(this.id);
-    var oldClass = `pos${this.x}${this.y}`;
-    var newClass = `pos${x}${y}`;
-    console.log(oldClass);
+    var oldClass = `pos${this.y}${this.x}`;
+    console.log('OLD:', oldClass);
+    var newClass = `pos${y}${x}`;
+    console.log('NEW:', newClass);
     div.removeClass(oldClass);
     div.addClass(newClass);
     this.x = x;
@@ -26,22 +29,22 @@ class Tile {
 }
 
 tiles = [
-  new Tile('tile_1', 0, 0),
-  new Tile('tile_2', 1, 0),
-  new Tile('tile_3', 2, 0),
-  new Tile('tile_4', 3, 0),
-  new Tile('tile_5', 0, 1),
-  new Tile('tile_6', 1, 1),
-  new Tile('tile_7', 2, 1),
-  new Tile('tile_8', 3, 1),
-  new Tile('tile_9', 0, 2),
-  new Tile('tile_10', 1, 2),
-  new Tile('tile_11', 2, 2),
-  new Tile('tile_12', 3, 2),
-  new Tile('tile_13', 0, 3),
-  new Tile('tile_14', 1, 3),
-  new Tile('tile_15', 2, 3),
-  new Tile('tile_16', 3, 3),
+  new Tile('#tile_1', 0, 0),
+  new Tile('#tile_2', 1, 0),
+  new Tile('#tile_3', 2, 0),
+  new Tile('#tile_4', 3, 0),
+  new Tile('#tile_5', 0, 1),
+  new Tile('#tile_6', 1, 1),
+  new Tile('#tile_7', 2, 1),
+  new Tile('#tile_8', 3, 1),
+  new Tile('#tile_9', 0, 2),
+  new Tile('#tile_10', 1, 2),
+  new Tile('#tile_11', 2, 2),
+  new Tile('#tile_12', 3, 2),
+  new Tile('#tile_13', 0, 3),
+  new Tile('#tile_14', 1, 3),
+  new Tile('#tile_15', 2, 3),
+  new Tile('#tile_16', 3, 3),
 ]
 
 for (var i = 0; i < tiles.length; i++) {
