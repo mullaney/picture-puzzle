@@ -1,60 +1,58 @@
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 $('footer').html('');
 
-let tiles = [];
+var tiles = [];
 
-let solved = false;
+var solved = false;
 
-class Tile {
-  constructor(id, x, y) {
+var Tile = function () {
+  function Tile(id, x, y) {
+    _classCallCheck(this, Tile);
+
     this.id = id;
     this.x = x;
     this.y = y;
   }
 
-  setPosition (x, y) {
-    // console.log('THIS:', this.id, this.x, this.y);
-    if (x === undefined) { x = this.x }
-    if (y === undefined) { y = this.y }
-    // console.log('ARGS:', x, y);
-    var div = $(this.id);
-    var oldClass = `pos${this.y}${this.x}`;
-    // console.log('OLD:', oldClass);
-    var newClass = `pos${y}${x}`;
-    // console.log('NEW:', newClass);
-    div.removeClass(oldClass);
-    div.addClass(newClass);
-    this.x = x;
-    this.y = y;
-  }
-}
+  _createClass(Tile, [{
+    key: 'setPosition',
+    value: function setPosition(x, y) {
+      // console.log('THIS:', this.id, this.x, this.y);
+      if (x === undefined) {
+        x = this.x;
+      }
+      if (y === undefined) {
+        y = this.y;
+      }
+      // console.log('ARGS:', x, y);
+      var div = $(this.id);
+      var oldClass = 'pos' + this.y + this.x;
+      // console.log('OLD:', oldClass);
+      var newClass = 'pos' + y + x;
+      // console.log('NEW:', newClass);
+      div.removeClass(oldClass);
+      div.addClass(newClass);
+      this.x = x;
+      this.y = y;
+    }
+  }]);
 
-tiles = [
-  new Tile('#tile_1', 0, 0),
-  new Tile('#tile_2', 1, 0),
-  new Tile('#tile_3', 2, 0),
-  new Tile('#tile_4', 3, 0),
-  new Tile('#tile_5', 0, 1),
-  new Tile('#tile_6', 1, 1),
-  new Tile('#tile_7', 2, 1),
-  new Tile('#tile_8', 3, 1),
-  new Tile('#tile_9', 0, 2),
-  new Tile('#tile_10', 1, 2),
-  new Tile('#tile_11', 2, 2),
-  new Tile('#tile_12', 3, 2),
-  new Tile('#tile_13', 0, 3),
-  new Tile('#tile_14', 1, 3),
-  new Tile('#tile_15', 2, 3),
-  new Tile('#tile_16', 3, 3),
-]
-let solution = [];
+  return Tile;
+}();
+
+tiles = [new Tile('#tile_1', 0, 0), new Tile('#tile_2', 1, 0), new Tile('#tile_3', 2, 0), new Tile('#tile_4', 3, 0), new Tile('#tile_5', 0, 1), new Tile('#tile_6', 1, 1), new Tile('#tile_7', 2, 1), new Tile('#tile_8', 3, 1), new Tile('#tile_9', 0, 2), new Tile('#tile_10', 1, 2), new Tile('#tile_11', 2, 2), new Tile('#tile_12', 3, 2), new Tile('#tile_13', 0, 3), new Tile('#tile_14', 1, 3), new Tile('#tile_15', 2, 3), new Tile('#tile_16', 3, 3)];
+var solution = [];
 
 for (var i = 0; i < tiles.length; i++) {
   solution.push({
     x: tiles[i].x,
     y: tiles[i].y
-  })
+  });
   tiles[i].setPosition();
 }
 
@@ -83,12 +81,11 @@ function swap(tile) {
 }
 
 function isSolved() {
-  for(var i = 0; i < tiles.length; i++) {
+  for (var i = 0; i < tiles.length; i++) {
     console.log(tiles[i].x, tiles[i].y);
     console.log(solution[i].x, solution[i].y);
     console.log('---');
-    if (tiles[i].x     != solution[i].x
-        || tiles[i].y  != solution[i].y) {
+    if (tiles[i].x != solution[i].x || tiles[i].y != solution[i].y) {
       return false;
     }
   }
@@ -96,9 +93,9 @@ function isSolved() {
 };
 
 function shuffle() {
-  let count = 0;
-  while(count++ < 300) {
-    var i = Math.floor(Math.random()*15);
+  var count = 0;
+  while (count++ < 3000) {
+    var i = Math.floor(Math.random() * 15);
     swap(tiles[i]);
     ;
   }
@@ -111,7 +108,7 @@ $('div.tile').on("click", function () {
     return true;
   }
   var i = this.id.indexOf('_');
-  var tileIndex = Number(this.id.slice(i+1))-1;
+  var tileIndex = Number(this.id.slice(i + 1)) - 1;
   swap(tiles[tileIndex]);
   if (isSolved()) {
     $('h2#solved').html('You did it!');
@@ -129,5 +126,4 @@ $('button#shuffle').on("click", function () {
   solved = false;
   $('div#tile_16').removeClass('solved');
   $('button#shuffle').hide();
-
-})
+});
