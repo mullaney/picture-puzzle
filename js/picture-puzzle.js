@@ -2,7 +2,9 @@
 
 $('footer').html('');
 
-var tiles = [];
+let tiles = [];
+
+let solved = false;
 
 class Tile {
   constructor(id, x, y) {
@@ -12,15 +14,15 @@ class Tile {
   }
 
   setPosition (x, y) {
-    console.log('THIS:', this.id, this.x, this.y);
+    // console.log('THIS:', this.id, this.x, this.y);
     if (x === undefined) { x = this.x }
     if (y === undefined) { y = this.y }
-    console.log('ARGS:', x, y);
+    // console.log('ARGS:', x, y);
     var div = $(this.id);
     var oldClass = `pos${this.y}${this.x}`;
-    console.log('OLD:', oldClass);
+    // console.log('OLD:', oldClass);
     var newClass = `pos${y}${x}`;
-    console.log('NEW:', newClass);
+    // console.log('NEW:', newClass);
     div.removeClass(oldClass);
     div.addClass(newClass);
     this.x = x;
@@ -46,18 +48,86 @@ tiles = [
   new Tile('#tile_15', 2, 3),
   new Tile('#tile_16', 3, 3),
 ]
+let solution = [];
 
 for (var i = 0; i < tiles.length; i++) {
+  solution.push({
+    x: tiles[i].x,
+    y: tiles[i].y
+  })
   tiles[i].setPosition();
 }
 
-function swap(tile1, tile2) {
-  var x1 = tile1.x;
-  var y1 = tile1.y;
-
-  var x2 = tile2.x;
-  var y2 = tile2.y;
-
-  tile1.setPosition(x2, y2);
-  tile2.setPosition(x1, y1);
+function isSwapable(tile) {
+  var blank = tiles[15];
+  var xdiff = Math.abs(tile.x - blank.x);
+  var ydiff = Math.abs(tile.y - blank.y);
+  if (xdiff + ydiff === 1) return true;
+  return false;
 }
+
+function swap(tile) {
+  if (isSwapable(tile)) {
+    var blank = tiles[15];
+    var x1 = tile.x;
+    var y1 = tile.y;
+
+    var x2 = blank.x;
+    var y2 = blank.y;
+
+    tile.setPosition(x2, y2);
+    blank.setPosition(x1, y1);
+    return true;
+  }
+  return false;
+}
+
+function isSolved() {
+  for(var i = 0; i < tiles.length; i++) {
+    console.log(tiles[i].x, tiles[i].y);
+    console.log(solution[i].x, solution[i].y);
+    console.log('---');
+    if (tiles[i].x     != solution[i].x
+        || tiles[i].y  != solution[i].y) {
+      return false;
+    }
+  }
+  return true;
+};
+
+function shuffle() {
+  let count = 0;
+  while(count++ < 300) {
+    var i = Math.floor(Math.random()*15);
+    swap(tiles[i]);
+    ;
+  }
+}
+
+shuffle();
+
+$('div.tile').on("click", function () {
+  if (solved) {
+    return true;
+  }
+  var i = this.id.indexOf('_');
+  var tileIndex = Number(this.id.slice(i+1))-1;
+  swap(tiles[tileIndex]);
+  if (isSolved()) {
+    $('h2#solved').html('You did it!');
+    solved = true;
+    $('div#tile_16').addClass('solved');
+    $('button#shuffle').show();
+  } else {
+    $('h2#solved').html('');
+  }
+});
+
+$('button#shuffle').on("click", function () {
+  shuffle();
+  $('h2#solved').html('');
+  solved = false;
+  $('div#tile_16').removeClass('solved');
+  $('button#shuffle').hide();
+
+})
