@@ -1,7 +1,5 @@
 'use strict';
 
-$('footer').html('');
-
 let tiles = [];
 
 let solved = false;
@@ -14,17 +12,11 @@ class Tile {
   }
 
   setPosition (x, y) {
-    // console.log('THIS:', this.id, this.x, this.y);
     if (x === undefined) { x = this.x }
     if (y === undefined) { y = this.y }
-    // console.log('ARGS:', x, y);
     var div = $(this.id);
-    var oldClass = `pos${this.y}${this.x}`;
-    // console.log('OLD:', oldClass);
-    var newClass = `pos${y}${x}`;
-    // console.log('NEW:', newClass);
-    div.removeClass(oldClass);
-    div.addClass(newClass);
+    div.removeClass(`pos${this.y}${this.x}`);
+    div.addClass(`pos${y}${x}`);
     this.x = x;
     this.y = y;
   }
@@ -60,9 +52,7 @@ for (var i = 0; i < tiles.length; i++) {
 
 function isSwapable(tile) {
   var blank = tiles[15];
-  var xdiff = Math.abs(tile.x - blank.x);
-  var ydiff = Math.abs(tile.y - blank.y);
-  if (xdiff + ydiff === 1) return true;
+  if (Math.abs(tile.x - blank.x) + Math.abs(tile.y - blank.y) === 1) return true;
   return false;
 }
 
