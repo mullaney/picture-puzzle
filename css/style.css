@@ -39,97 +39,97 @@ div#puzzle {
 .pos33 { grid-row: 4 / 5; grid-column: 4 / 5; }
 
 div#tile_1 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 0px 0px;
   background-size: 646px 646px;
 }
 
 div#tile_2 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 486px 0px;
   background-size: 646px 646px;
 }
 
 div#tile_3 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 324px 0px;
   background-size: 646px 646px;
 }
 
 div#tile_4 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 162px 0px;
   background-size: 646px 646px;
 }
 
 div#tile_5 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 0px 486px;
   background-size: 646px 646px;
 }
 
 div#tile_6 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 486px 486px;
   background-size: 646px 646px;
 }
 
 div#tile_7 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 324px 486px;
   background-size: 646px 646px;
 }
 
 div#tile_8 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 162px 486px;
   background-size: 646px 646px;
 }
 
 div#tile_9 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 0px 324px;
   background-size: 646px 646px;
 }
 
 div#tile_10 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 486px 324px;
   background-size: 646px 646px;
 }
 
 div#tile_11 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 324px 324px;
   background-size: 646px 646px;
 }
 
 div#tile_12 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 162px 324px;
   background-size: 646px 646px;
 }
 
 div#tile_13 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 0px 162px;
   background-size: 646px 646px;
 }
 
 div#tile_14 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 486px 162px;
   background-size: 646px 646px;
 }
 
 div#tile_15 {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   background-position: 324px 162px;
   background-size: 646px 646px;
 }
 
 div.solved {
-  background-image: url('./../img/image.jpg');
+  background-image: url('https://picsum.photos/650/?random');
   grid-column: 1 / 5;
   grid-row: 1 / 5;
   background-size: 650px 650px;
@@ -143,6 +143,11 @@ footer {
 }
 
 button#shuffle {
-  font-size: 1.2em;
   display: none;
+}
+
+button {
+  font-size: 1.2em;
+  background-color: teal;
+  color: white;
 }
