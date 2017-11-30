@@ -87,10 +87,11 @@ function isSolved() {
 
 function shuffle() {
   let count = 0;
-  while(count++ < 3000) {
-    var i = Math.floor(Math.random()*15);
-    swap(tiles[i]);
-    ;
+  while(count++ < 1000) {
+    setTimeout(function() {
+      var i = Math.floor(Math.random()*15);
+      swap(tiles[i]);  
+    }, count * 5);
   }
 }
 
